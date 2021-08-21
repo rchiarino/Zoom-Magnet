@@ -1,12 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zoom Url Generator</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../scss/custom.scss" />
 </head>
+
 <body>
-    
+    <header></header>
+    <main>
+        <section class="mt-5">
+            <div class="container card">
+                <form class="col needs-validation" novalidate>
+                    <div class="form-floating mt-3">
+                        <input type="text" class="form-control" id="meetingID" placeholder="Meeting ID" required />
+                        <label for="me etingID">Your Meeting ID</label>
+                        <div class="invalid-feedback">Please provide a meeting ID</div>
+                        <div class="valid-feedback">Looks good!</div>
+                    </div>
+                    <div class="form-floating mt-3 mb-3">
+                        <input type="password" class="form-control" id="meetingPass" placeholder="Password" required>
+                        <label for="mseetingPass">Meeting Password</label>
+                        <div class="invalid-feedback">Please provide a meeting password</div>
+                        <div class="valid-feedback">Looks good!</div>
+                    </div>
+
+                    <div class="col-3 mb-3">
+                        <button class="btn btn-primary" type="submit">Submit form</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section>
+            <div class="container card mt-5 mb-5" aria-hidden="true">
+                <div class="card-body">
+                    <h5 class="card-title placeholder-glow">
+                        <span class="placeholder col-6"></span>
+                    </h5>
+                    <p class="card-text placeholder-glow">
+                        <span class="placeholder col-7"></span>
+                        <span class="placeholder col-4"></span>
+                        <span class="placeholder col-4"></span>
+                        <span class="placeholder col-6"></span>
+                        <span class="placeholder col-8"></span>
+                    </p>
+                    <a href="#" tabindex="-1" class="btn btn-primary disabled placeholder col-6"></a>
+                </div>
+            </div>
+        </section>
+
+        <footer></footer>
+
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto">Generator</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">Generated zoom shortcut succesfully</div>
+            </div>
+        </div>
+    </main>
+    <script src="./index.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,28 @@
+{
+  "name": "zoom-magnet",
+  "version": "1.0.2",
+  "description": "A Zoom Meeting shortcut generator for Mac/Windows iOS/Android",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel ./src/index.html",
+    "prebuild": "npx rimraf build",
+    "build": "parcel build --public-url ./ ./src/index.html --experimental-scope-hoisting --out-dir build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rchiarino/Zoom-Magnet.git"
+  },
+  "author": "Renzo Chiarino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rchiarino/Zoom-Magnet/issues"
+  },
+  "homepage": "https://github.com/rchiarino/Zoom-Magnet#readme",
+  "dependencies": {
+    "bootstrap": "^5.1.0",
+    "bootstrap-icons": "^1.5.0"
+  },
+  "devDependencies": {
+    "sass": "^1.38.0"
+  }
+}
