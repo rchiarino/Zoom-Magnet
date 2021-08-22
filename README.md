@@ -1,4 +1,10 @@
+## Zoom Shortcut Generator
 
-=======
-# ZOOM Magnet
->>>>>>> 3de76e3341c797a703985727393a626b46c3bc37
+Zoom doesn't have a way of making a shortcut to a recurrent meeting, as users that annoying because we have to save the URL in the bookmark.
+ To prevent that from happening I made this page, that transform yout Meeting ID and Meeing Password to a zoom compatible shortcut.
+ 
+#### TODO:
+- [ ] Modals (FAQ, About)
+- [ ] Mobile version 
+
+
