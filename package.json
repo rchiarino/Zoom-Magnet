@@ -1,28 +1,37 @@
 {
-  "name": "zoom-magnet",
-  "version": "1.0.2",
-  "description": "A Zoom Meeting shortcut generator for Mac/Windows iOS/Android",
-  "main": "index.js",
-  "scripts": {
-    "dev": "parcel ./src/index.html",
-    "prebuild": "npx rimraf build",
-    "build": "parcel build --public-url ./ ./src/index.html --experimental-scope-hoisting --out-dir build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rchiarino/Zoom-Magnet.git"
-  },
-  "author": "Renzo Chiarino",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rchiarino/Zoom-Magnet/issues"
-  },
-  "homepage": "https://github.com/rchiarino/Zoom-Magnet#readme",
-  "dependencies": {
-    "bootstrap": "^5.1.0",
-    "bootstrap-icons": "^1.5.0"
-  },
-  "devDependencies": {
-    "sass": "^1.38.0"
-  }
+    "name": "zoom-magnet",
+    "version": "1.0.2",
+    "description": "A Zoom Meeting shortcut generator for Mac/Windows iOS/Android",
+    "scripts": {
+        "dev": "parcel ./src/index.html",
+        "prebuild": "npx rimraf build",
+        "build": "parcel build ./src/index.html --public-url ./",
+        "deploy": "push-dir --dir=dist --branch=page --cleanup --verbose"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rchiarino/Zoom-Magnet.git"
+    },
+    "author": "Renzo Chiarino",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/rchiarino/Zoom-Magnet/issues"
+    },
+    "homepage": "https://github.com/rchiarino/Zoom-Magnet#readme",
+    "dependencies": {
+        "bootstrap": "^5.1.0",
+        "bootstrap-icons": "^1.5.0"
+    },
+    "devDependencies": {
+        "@parcel/packager-raw-url": "^2.0.0-rc.0",
+        "@parcel/transformer-image": "^2.0.0-rc.0",
+        "@parcel/transformer-sass": "^2.0.0-rc.0",
+        "@parcel/transformer-webmanifest": "^2.0.0-rc.0",
+        "cssnano": "^4.1.11",
+        "parcel": "^2.0.0-rc.0",
+        "postcss": "^8.3.6",
+        "push-dir": "^0.4.1",
+        "sass": "^1.38.0",
+        "shx": "^0.3.3"
+    }
 }

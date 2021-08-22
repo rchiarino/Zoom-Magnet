@@ -1,18 +1,116 @@
 import * as bootstrap from "bootstrap";
 window.onload = () => {
-  notify(), validate();
+  detectOS(), validate();
 };
 
-function notify() {
-  var toastTrigger = document.getElementById("liveToastBtn");
-  var toastLiveExample = document.getElementById("liveToast");
-  if (toastTrigger) {
-    toastTrigger.addEventListener("click", function () {
-      var toast = new bootstrap.Toast(toastLiveExample);
+var url = "";
+var osName = "Unknown OS";
+var os = null;
+var systemSelector = document
+  .getElementById("sysSelector")
+  .querySelectorAll("a");
 
-      toast.show();
-    });
+var configMenu = document.getElementById("list-config-list");
+var installMenu = document.getElementById("list-install-list");
+
+document.getElementById("resetOS").onclick = resetOS;
+document.getElementById("download").onclick = download;
+systemSelector.forEach((button) => {
+  button.addEventListener("click", () => {
+    selectOS(button);
+  });
+});
+
+document.getElementById("list-os-list").addEventListener("click", () => {
+  configMenu.classList.add("disabled");
+  installMenu.classList.add("disabled");
+});
+
+function detectOS() {
+  if (navigator.appVersion.indexOf("Win") != -1)
+    (osName = "Windows"), (os = "win");
+  if (navigator.appVersion.indexOf("Mac") != -1)
+    (osName = "MacOS"), (os = "mac");
+  //   if (navigator.appVersion.indexOf("X11") != -1)
+  //     (osName = "UNIX"), (os = "unix");
+  //   if (navigator.appVersion.indexOf("Linux") != -1)
+  //     (osName = "Linux"), (os = "lin");
+
+  document.getElementById("sys").innerHTML = osName;
+
+  if (os != null) {
+    document
+      .getElementById("sysSelector")
+      .querySelectorAll("a")
+      .forEach((button) => {
+        if (button.id != os) button.classList.add("disabled");
+      });
   }
+}
+
+function selectOS(button) {
+  os = button.id;
+  osName = button.innerHTML;
+  document.getElementById("sys").innerHTML = osName;
+  document.getElementById("os").innerHTML = osName;
+
+  configMenu.classList.remove("disabled");
+
+  var config = new bootstrap.Tab(
+    document.querySelector('#configurator a[href="#list-config"]')
+  );
+  config.show();
+}
+
+function resetOS() {
+  systemSelector.forEach((button) => {
+    button.classList.remove("disabled");
+  });
+}
+
+function generate(mID, mPass) {
+  notify();
+  installMenu.classList.remove("disabled");
+  url = "zoommtg://zoom.us/join?confno=" + mID + "&amp;pwd=" + mPass;
+  var link = document.createElement("a");
+  link.href = url;
+  link.textContent = url;
+
+  document.getElementById("link").innerHTML = "";
+  document.getElementById("link").appendChild(link);
+
+  var install = new bootstrap.Tab(
+    document.querySelector('#configurator a[href="#list-install"]')
+  );
+  install.show();
+}
+
+function download() {
+  var filename = "pleaseRenameMe.inetloc";
+
+  var xmltext =
+    "<?xml version='1.0' encoding='UTF-8'?>" +
+    "<!DOCTYPE plist PUBLIC '-//Apple//DTD PLIST 1.0//EN' 'http://www.apple.com/DTDs/PropertyList-1.0.dtd'>" +
+    "<plist version='1.0'><dict><key>URL</key><string>" +
+    url +
+    "</string></dict></plist>";
+
+  if (os == "win") {
+    filename = "pleaseRenameMe.url";
+    xmltext = "[InternetShortcut] \nURL=" + url;
+  }
+
+  var link = document.createElement("a");
+  var blobUrl = new Blob([xmltext], { type: "text/plain" });
+
+  link.setAttribute("href", window.URL.createObjectURL(blobUrl));
+  link.setAttribute("download", filename);
+
+  link.dataset.downloadurl = ["text/plain", link.download, link.href].join(":");
+  link.draggable = true;
+  link.classList.add("dragout");
+
+  link.click();
 }
 
 function validate() {
@@ -28,7 +126,7 @@ function validate() {
           event.preventDefault();
           event.stopPropagation();
         } else {
-          alert("validated");
+          generate(forms[0][0].value, forms[0][1].value);
         }
 
         form.classList.add("was-validated");
@@ -36,4 +134,12 @@ function validate() {
       false
     );
   });
+}
+
+function notify() {
+  var notif = document.getElementById("notification");
+
+  var toast = new bootstrap.Toast(notif);
+
+  toast.show();
 }
