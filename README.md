@@ -5,6 +5,6 @@ Zoom doesn't have a way of making a shortcut to a recurrent meeting, as users th
  
 #### TODO:
 - [ ] Modals (FAQ, About)
-- [ ] Mobile version 
+- [x] Mobile version 
 
 
