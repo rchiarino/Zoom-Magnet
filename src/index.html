@@ -90,7 +90,7 @@
       <section>
         <div class="container-lg mh-100 mt-5 mb-5" aria-hidden="true">
           <div class="card-body">
-            <div class="col-4 mt-5">
+            <div class="col-md-4 col-12 mt-5 mb-4">
               <h5>How to use:</h5>
               <p>
                 Please follow the list bellow to get a correctly formated
@@ -98,8 +98,8 @@
               </p>
             </div>
 
-            <div class="row">
-              <div class="col-4">
+            <div class="row mb-5">
+              <div class="col-md-4 col-12">
                 <div class="list-group mb-5" id="configurator" role="tablist">
                   <a
                     class="list-group-item list-group-item-action active"
@@ -133,7 +133,7 @@
                 </div>
               </div>
 
-              <div class="col-8">
+              <div class="col-md-8 col-12">
                 <div class="tab-content" id="nav-tabContent">
                   <div
                     class="tab-pane fade show active"
@@ -142,7 +142,10 @@
                     aria-labelledby="list-os-list"
                   >
                     <div class="container">
-                      <div id="sysSelector" class="d-grid gap-2 col-6 mx-auto">
+                      <div
+                        id="sysSelector"
+                        class="d-grid gap-2 col-md-6 col-12 mx-auto"
+                      >
                         <a
                           id="mac"
                           href="#"
@@ -194,7 +197,7 @@
                     aria-labelledby="list-config-list"
                   >
                     <form class="needs-validation" novalidate>
-                      <div class="d-grid gap-2 col-6 mx-auto">
+                      <div class="d-grid gap-2 col-md-6 col-12 mx-auto">
                         <div class="form-floating">
                           <input
                             type="text"
@@ -280,7 +283,7 @@
                       <div class="accordion-item">
                         <h2 class="accordion-header" id="headingTwo">
                           <button
-                            class="accordion-button collapsed"
+                            class="accordion-button"
                             type="button"
                             data-bs-toggle="collapse"
                             data-bs-target="#collapseTwo"
@@ -292,7 +295,7 @@
                         </h2>
                         <div
                           id="collapseTwo"
-                          class="accordion-collapse collapse"
+                          class="accordion-collapse collapse show"
                           aria-labelledby="headingTwo"
                           data-bs-parent="#accordionExample"
                         >
@@ -325,68 +328,56 @@
       </section>
     </main>
 
-    <div id="notificationHolder" class="position-fixed bottom-0 end-0 p-3">
-      <div
-        id="notification"
-        class="toast align-items-center text-white bg-success border-0"
-        role="alert"
-        aria-live="assertive"
-        aria-atomic="true"
-      >
-        <div class="d-flex">
-          <div class="toast-body">Shortcut generated successfully</div>
-          <button
-            type="button"
-            class="btn-close btn-close-white me-2 m-auto"
-            data-bs-dismiss="toast"
-            aria-label="Close"
-          ></button>
+    <footer class="footer py-2 bg-light text-muted fixed-bottom">
+      <!-- MD -->
+      <div class="d-lg-none container mt-2">
+        <div class="d-flex align-items-center flex-column">
+          <p>&copy; 2021, Zoom Shortcut</p>
+          <div class="d-flex w-100 justify-content-around">
+            <p>
+              <a href="#!" class="text-reset">FAQs</a>
+            </p>
+            <p>
+              <a
+                href="https://rchiarino.github.io"
+                target="_blank"
+                class="text-reset"
+                >rchiarino</a
+              >
+            </p>
+            <p>
+              <a href="#!" class="text-reset">About</a>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <footer
-      class="
-        d-flex
-        flex-wrap
-        justify-content-between
-        align-items-center
-        py-3
-        border-top
-      "
-    >
-      <p class="col-md-4 mb-0 px-2 text-muted">
-        &copy; 2021, Zoom Shortcut Generator
-      </p>
-
-      <a
-        href="https://rchiarino.github.io"
-        target="_blank"
-        aria-label="Developed by Renzo"
+      <!-- LG -->
+      <div
         class="
-          col-md-4
-          d-flex
-          align-items-center
-          justify-content-center
-          mb-3 mb-md-0
-          me-md-auto
-          link-dark
-          text-decoration-none
+          d-none d-md-flex d-lg-flex
+          container
+          flex-row
+          justify-content-md-around
+          mt-2
         "
       >
-        <!-- SVG 40x32 -->
-        <!-- <i class="bi bi-bootstrap-fill"></i> -->
-        <p class="mb-0 text-muted">rchiarino</p>
-      </a>
-
-      <ul class="nav col-md-4 justify-content-end">
-        <li class="nav-item">
-          <a href="#" class="nav-link px-2 text-muted">FAQs</a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link px-2 text-muted">About</a>
-        </li>
-      </ul>
+        <p>&copy; 2021, Zoom Shortcut</p>
+        <p class="">
+          <a
+            href="https://rchiarino.github.io"
+            target="_blank"
+            class="text-reset"
+            >rchiarino</a
+          >
+        </p>
+        <p>
+          <a href="#!" class="text-reset">FAQs</a>
+        </p>
+        <p>
+          <a href="#!" class="text-reset">About</a>
+        </p>
+      </div>
     </footer>
 
     <script type="module" src="./index.js"></script>

@@ -69,7 +69,6 @@ function resetOS() {
 }
 
 function generate(mID, mPass) {
-  notify();
   installMenu.classList.remove("disabled");
   url = "zoommtg://zoom.us/join?confno=" + mID + "&amp;pwd=" + mPass;
   var link = document.createElement("a");
@@ -126,6 +125,7 @@ function validate() {
           event.preventDefault();
           event.stopPropagation();
         } else {
+          event.preventDefault();
           generate(forms[0][0].value, forms[0][1].value);
         }
 
@@ -134,12 +134,4 @@ function validate() {
       false
     );
   });
-}
-
-function notify() {
-  var notif = document.getElementById("notification");
-
-  var toast = new bootstrap.Toast(notif);
-
-  toast.show();
 }
