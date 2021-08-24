@@ -9,3 +9,19 @@
 #notificationHolder {
   z-index: 1;
 }
+
+.close:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+
+.modal-header .close {
+  padding: 1rem;
+  margin: -1rem -1rem -1rem auto;
+}
+
+button.close {
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}

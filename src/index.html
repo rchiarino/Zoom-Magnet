@@ -328,14 +328,152 @@
       </section>
     </main>
 
+    <!-- FAQ -->
+    <div
+      class="modal fade"
+      id="faqs"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="faqsInfo"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="faqsInfo">Frequently Ask Questions</h5>
+            <button
+              type="button"
+              class="close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container"></div>
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseOne"
+                  >
+                    How does it work
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseOne"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="flush-headingOne"
+                  data-bs-parent="#accordionFlushExample"
+                >
+                  <div class="accordion-body">
+                    When this page is loaded, it detect your current
+                    <code>OS</code>, generates a template shortcut in
+                    <code>XML</code>, with empty <strong>meeting ID</strong> and
+                    <strong>password</strong>. <br />
+                    When the user fills the form and press generate, in the
+                    background changes the missing parameter of the shortcut.
+                    <br />
+                    Finaly if the user decided to use the automatic installation
+                    it triggers a download with the generated file.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseTwo"
+                  >
+                    My data is saved?
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseTwo"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="flush-headingTwo"
+                  data-bs-parent="#accordionFlushExample"
+                >
+                  <div class="accordion-body">
+                    <h5><strong>NO</strong></h5>
+                    Your data is <strong>never</strong> saved in any kind of
+                    storage.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABT -->
+    <div
+      class="modal fade"
+      id="abt"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="abtInfo"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="abtInfo">About</h5>
+            <button
+              type="button"
+              class="close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <p>
+                Zoom shortcut generator, It has a simple and clear objective, to
+                facilitate the use of the zoom platform due to the fact that it
+                does not allow the user to save the information to be able to
+                join a recurring meeting.
+
+                <a
+                  class="text-reset"
+                  aria-label="More Info"
+                  href="https://github.com/rchiarino/Zoom-Magnet"
+                  ><i class="bi bi-info-circle"></i
+                ></a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <footer class="footer py-2 bg-light text-muted fixed-bottom">
       <!-- MD -->
-      <div class="d-lg-none container mt-2">
+      <div class="d-lg-none d-md-none container mt-2">
         <div class="d-flex align-items-center flex-column">
           <p>&copy; 2021, Zoom Shortcut</p>
           <div class="d-flex w-100 justify-content-around">
             <p>
-              <a href="#!" class="text-reset">FAQs</a>
+              <a
+                href=""
+                data-bs-toggle="modal"
+                data-bs-target="#faqs"
+                class="text-reset"
+                >FAQs</a
+              >
             </p>
             <p>
               <a
@@ -346,7 +484,13 @@
               >
             </p>
             <p>
-              <a href="#!" class="text-reset">About</a>
+              <a
+                href=""
+                data-bs-toggle="modal"
+                data-bs-target="#abt"
+                class="text-reset"
+                >About</a
+              >
             </p>
           </div>
         </div>
@@ -371,11 +515,21 @@
             >rchiarino</a
           >
         </p>
+        <a
+          href=""
+          data-bs-toggle="modal"
+          data-bs-target="#faqs"
+          class="text-reset"
+          >FAQs</a
+        >
         <p>
-          <a href="#!" class="text-reset">FAQs</a>
-        </p>
-        <p>
-          <a href="#!" class="text-reset">About</a>
+          <a
+            href=""
+            data-bs-toggle="modal"
+            data-bs-target="#abt"
+            class="text-reset"
+            >About</a
+          >
         </p>
       </div>
     </footer>
