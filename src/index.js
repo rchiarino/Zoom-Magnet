@@ -4,6 +4,7 @@ window.onload = () => {
 };
 
 var url = "";
+var urlDownload = "";
 var osName = "Unknown OS";
 var os = null;
 var systemSelector = document
@@ -70,7 +71,8 @@ function resetOS() {
 
 function generate(mID, mPass) {
   installMenu.classList.remove("disabled");
-  url = "zoommtg://zoom.us/join?confno=" + mID + "&amp;pwd=" + mPass;
+  url = "zoommtg://zoom.us/join?confno=" + mID + "&pwd=" + mPass;
+  urlDownload = "zoommtg://zoom.us/join?confno=" + mID + "&amp;pwd=" + mPass;
   var link = document.createElement("a");
   link.href = url;
   link.textContent = url;
@@ -91,21 +93,21 @@ function download() {
     "<?xml version='1.0' encoding='UTF-8'?>" +
     "<!DOCTYPE plist PUBLIC '-//Apple//DTD PLIST 1.0//EN' 'http://www.apple.com/DTDs/PropertyList-1.0.dtd'>" +
     "<plist version='1.0'><dict><key>URL</key><string>" +
-    url +
+    urlDownload +
     "</string></dict></plist>";
 
   if (os == "win") {
     filename = "pleaseRenameMe.url";
-    xmltext = "[InternetShortcut] \nURL=" + url;
+    xmltext = "[InternetShortcut] \nURL=" + urlDownload;
   }
 
   var link = document.createElement("a");
-  var blobUrl = new Blob([xmltext], { type: "text/plain" });
+  var blobUrl = new Blob([xmltext], { type: "text/xml" });
 
   link.setAttribute("href", window.URL.createObjectURL(blobUrl));
   link.setAttribute("download", filename);
 
-  link.dataset.downloadurl = ["text/plain", link.download, link.href].join(":");
+  link.dataset.downloadurl = ["text/xml", link.download, link.href].join(":");
   link.draggable = true;
   link.classList.add("dragout");
 
