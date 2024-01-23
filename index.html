@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoom Shortcut Generator</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.0919a4d6.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.ccd9f7a5.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.bdd34f1d.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.e3deea06.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.c030dfc5.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.8a94031a.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.6cc20bfe.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.b8b9cb79.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.c2160228.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.0a06e3f3.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.41eddc39.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.6285f227.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.8af96617.png">
+    <link rel="manifest" href="/up_/static/ico/manifest.webmanifest">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.aec137d4.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="/index.d0e91165.css">
+  </head>
+
+  <body>
+    <main>
+      <section>
+        <div class="container-lg mh-100 mt-5 mb-5" aria-hidden="true">
+          <div class="card-body">
+            <div class="col-md-4 col-12 mt-5 mb-4">
+              <h5>How to use:</h5>
+              <p>
+                Please follow the list bellow to get a correctly formated
+                shortcut for your zoom meeting.
+              </p>
+            </div>
+
+            <div class="row mb-5">
+              <div class="col-md-4 col-12">
+                <div class="list-group mb-5" id="configurator" role="tablist">
+                  <a class="list-group-item list-group-item-action active" id="list-os-list" data-bs-toggle="list" href="#list-os" role="tab" aria-controls="list-os">Platform</a>
+
+                  <a class="list-group-item list-group-item-action disabled" id="list-config-list" data-bs-toggle="list" href="#list-config" role="tab" aria-controls="list-config">Configuration</a>
+
+                  <a class="list-group-item list-group-item-action disabled" id="list-install-list" data-bs-toggle="list" href="#list-install" role="tab" aria-controls="list-install">Instalation</a>
+                </div>
+              </div>
+
+              <div class="col-md-8 col-12">
+                <div class="tab-content" id="nav-tabContent">
+                  <div class="tab-pane fade show active" id="list-os" role="tabpanel" aria-labelledby="list-os-list">
+                    <div class="container">
+                      <div id="sysSelector" class="d-grid gap-2 col-md-6 col-12 mx-auto">
+                        <a id="mac" href="#" class="btn btn-outline-primary btn-lg" tabindex="-1" role="button">MacOS</a>
+
+                        <a id="win" href="#" class="btn btn-outline-primary btn-lg" tabindex="-1" role="button">Windows</a>
+
+                        <!-- <a
+                          id="lin"
+                          href="#"
+                          class="btn btn-outline-primary btn-lg"
+                          tabindex="-1"
+                          role="button"
+                          >Linux</a
+                        > -->
+                      </div>
+
+                      <div class="mt-4 d-flex justify-content-center">
+                        <p class="font-monospace text-muted">
+                          The system selected is: <span id="sys">Unknown</span>
+                          <br>
+                          If this is wrong please click
+                          <a id="resetOS" href="javascript:resetOS" class="text-reset">here</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="tab-pane fade" id="list-config" role="tabpanel" aria-labelledby="list-config-list">
+                    <form class="needs-validation" novalidate="">
+                      <div class="d-grid gap-2 col-md-6 col-12 mx-auto">
+                        <div class="form-floating">
+                          <input type="text" class="form-control" id="meetingID" placeholder="Meeting ID" required="">
+                          <label for="me etingID">Your Meeting ID</label>
+                          <div class="invalid-feedback">
+                            Please provide a meeting ID
+                          </div>
+                          <div class="valid-feedback">Looks good!</div>
+                        </div>
+
+                        <div class="form-floating">
+                          <input type="text" class="form-control" id="meetingPass" placeholder="Password" required="">
+                          <label for="mseetingPass">Meeting Password</label>
+                          <div class="invalid-feedback">
+                            Please provide a meeting password
+                          </div>
+                          <div class="valid-feedback">Looks good!</div>
+                        </div>
+
+                        <div>
+                          <button class="btn btn-primary mb-5" type="submit">
+                            Generate
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+
+                  <div class="tab-pane fade" id="list-install" role="tabpanel" aria-labelledby="list-install-list">
+                    <div class="accordion" id="accordionInstalation">
+                      <!-- manual -->
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Manual
+                          </button>
+                        </h2>
+
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <p>
+                              If you want to make the shortcut yourself drag
+                              this URL to your <strong>desktop</strong> or
+                              <strong>bookmark bar</strong>:
+                            </p>
+
+                            <p id="link" class="placeholder-glow mt-3">
+                              <span class="placeholder col-12"></span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- automatic -->
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Automatic
+                          </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <p>
+                              The automatic method download a shortcut using the
+                              data you entered before. <br>
+                              This file is configured to:
+                              <code><span id="os"></span></code>
+                            </p>
+
+                            <button id="download" type="button" class="btn btn-primary btn-lg mt-3" onclick="javascript:(0)">
+                              Download
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FAQ -->
+    <div class="modal fade" id="faqs" tabindex="-1" role="dialog" aria-labelledby="faqsInfo" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="faqsInfo">Frequently Ask Questions</h5>
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container"></div>
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    How does it work
+                  </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    When this page is loaded, it detect your current
+                    <code>OS</code>, generates a template shortcut in
+                    <code>XML</code>, with empty <strong>meeting ID</strong> and
+                    <strong>password</strong>. <br>
+                    When the user fills the form and press generate, in the
+                    background changes the missing parameter of the shortcut.
+                    <br>
+                    Finaly if the user decided to use the automatic installation
+                    it triggers a download with the generated file.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    My data is saved?
+                  </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <h5><strong>NO</strong></h5>
+                    Your data is <strong>never</strong> saved in any kind of
+                    storage.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABT -->
+    <div class="modal fade" id="abt" tabindex="-1" role="dialog" aria-labelledby="abtInfo" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="abtInfo">About</h5>
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <p>
+                Zoom shortcut generator, It has a simple and clear objective, to
+                facilitate the use of the zoom platform due to the fact that it
+                does not allow the user to save the information to be able to
+                join a recurring meeting.
+
+                <a class="text-reset" aria-label="More Info" href="https://github.com/rchiarino/Zoom-Magnet"><i class="bi bi-info-circle"></i></a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer py-2 bg-light text-muted fixed-bottom">
+      <!-- MD -->
+      <div class="d-lg-none d-md-none container mt-2">
+        <div class="d-flex align-items-center flex-column">
+          <p>&copy; 2021, Zoom Shortcut</p>
+          <div class="d-flex w-100 justify-content-around">
+            <p>
+              <a href="" data-bs-toggle="modal" data-bs-target="#faqs" class="text-reset">FAQs</a>
+            </p>
+            <p>
+              <a href="https://rchiarino.github.io" target="_blank" class="text-reset">rchiarino</a>
+            </p>
+            <p>
+              <a href="" data-bs-toggle="modal" data-bs-target="#abt" class="text-reset">About</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- LG -->
+      <div class="
+          d-none d-md-flex d-lg-flex
+          container
+          flex-row
+          justify-content-md-around
+          mt-2
+        ">
+        <p>&copy; 2021, Zoom Shortcut</p>
+        <p class="">
+          <a href="https://rchiarino.github.io" target="_blank" class="text-reset">rchiarino</a>
+        </p>
+        <a href="" data-bs-toggle="modal" data-bs-target="#faqs" class="text-reset">FAQs</a>
+        <p>
+          <a href="" data-bs-toggle="modal" data-bs-target="#abt" class="text-reset">About</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="/index.5cb7de60.js" defer=""></script>
+  </body>
+</html>
